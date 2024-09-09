@@ -1,0 +1,103 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 34,
+    "spacing": 8,
+    "modules-left": [
+        "hyprland/workspaces", "hyprland/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "custom/colorpicker",
+        "custom/screenshot",
+        "cpu", 
+        "memory",
+        "battery",
+        "tray",
+        "custom/date",
+        "custom/time"
+    ],
+
+    "pulseaudio": {
+        "format": "<span color='#b4befe'>{icon}</span>  {volume}%",
+        "format-bluetooth": "{icon}  {volume}% ",
+        "tooltip": false,
+        "format-muted": "",
+        "format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "tooltip": false,
+        "format": "<span color='#ffb86c'>{icon}</span>  {percent}%",
+        "format-icons": ["", ""],
+        "on-scroll-up":   "brightnessctl s 1%+",
+        "on-scroll-down": "brightnessctl s 1%-",
+        "on-click-right": "brightnessctl s 0"
+    },
+
+    "hyprland/window": {
+        "max-length": 30
+    },
+    
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format": "{icon}",
+        "tooltip": false,
+        "all-outputs": true,
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+
+    "custom/colorpicker": {
+        "format": "<span color='#b4befe'></span>",
+        "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+        "tooltip": true,
+        "tooltip-format": "Color Picker"
+    },
+
+    "custom/screenshot": {
+        "format": "<span color='#b4befe'></span>",
+        "on-click": "~/.config/waybar/scripts/screenshot.sh",
+        "tooltip": true,
+        "tooltip-format": "Screenshot"
+    },
+
+    "cpu": {
+        "interval": 15,
+        "format": "<span color='#b4befe'></span>  {usage}%"
+    },
+
+    "memory": {
+        "interval": 15,
+        "format": "<span color='#b4befe'></span>  {percentage}%"
+    },
+
+    "battery": {
+      "format": "<span color='#b4befe'>{icon}</span> {capacity}%",
+      "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+      "format-charging": "<span color='#b4befe'></span> {capacity}%",
+      "tooltip": false,
+    },
+
+    "custom/date": {
+        "format": "<span color='#b4befe'> </span> {}",
+        "exec": "date +\"%a %b %d\"",
+        "interval": 60
+    },
+
+    "custom/time": {
+        "format": "<span color='#b4befe'> </span> {}",
+        "exec": "date +\"%H:%M:%S\"",
+        "interval": 1
+    }
+}
