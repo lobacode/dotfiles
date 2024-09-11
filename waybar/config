@@ -12,6 +12,7 @@
         "pulseaudio",
         "custom/colorpicker",
         "custom/screenshot",
+        "disk",
         "cpu", 
         "memory",
         "battery",
@@ -70,6 +71,12 @@
         "on-click": "~/.config/waybar/scripts/screenshot.sh",
         "tooltip": true,
         "tooltip-format": "Screenshot"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "<span color='#b4befe'></span>  {used}/{free}",
+        "unit": "GB"
     },
 
     "cpu": {
