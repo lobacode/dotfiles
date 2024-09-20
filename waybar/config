@@ -4,7 +4,8 @@
     "height": 34,
     "spacing": 8,
     "modules-left": [
-        "hyprland/workspaces", "hyprland/window"
+        "hyprland/workspaces", 
+        "hyprland/window"
     ],
     "modules-center": [],
     "modules-right": [
@@ -20,6 +21,12 @@
         "custom/date",
         "custom/time"
     ],
+
+    "clock": {
+        "interval": 60,
+        "format": "{:%H:%M}",
+        "max-length": 25
+    },
 
     "pulseaudio": {
         "format": "<span color='#b4befe'>{icon}</span>  {volume}%",
@@ -49,7 +56,6 @@
     },
     
     "hyprland/workspaces": {
-        "format": "{name}",
         "format": "{icon}",
         "tooltip": false,
         "all-outputs": true,
@@ -93,7 +99,7 @@
       "format": "<span color='#b4befe'>{icon}</span> {capacity}%",
       "format-icons": ["", "", "", "", "", "", "", "", "", ""],
       "format-charging": "<span color='#b4befe'></span> {capacity}%",
-      "tooltip": false,
+      "tooltip": false
     },
 
     "custom/date": {
